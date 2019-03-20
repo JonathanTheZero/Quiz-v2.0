@@ -29,9 +29,10 @@ class ViewController: UIViewController {
 
     //MARK: Actions
 
-    @IBAction func tapOnNewGame(sender: AnyObject) {
-        headline.text = "Test123"
+    @IBAction func tapOnSettings(sender: UIButton) {
+        headline.text = "Erfolgreich geklickt"
     }
+    
     
 }
 

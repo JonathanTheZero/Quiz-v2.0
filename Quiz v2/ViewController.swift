@@ -2,13 +2,20 @@
 //  ViewController.swift
 //  Quiz v2
 //
-//  Created by Redaktion on 19.03.19.
+//  Crated by Redaktion on 19.03.19.
 //  Copyright © 2019 Jonathan. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var mainMenu: UIStackView!
+    @IBOutlet weak var headline: UILabel!
+    @IBOutlet weak var newGame: UIButton!
+    @IBOutlet weak var settings: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +27,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK: Actions
 
+    @IBAction func tapOnNewGame(sender: AnyObject) {
+        headline.text = "Test123"
+    }
+    
 }
 

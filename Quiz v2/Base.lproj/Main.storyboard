@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,11 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-Fh-DLq">
+                                <rect key="frame" x="85" y="170" width="430" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-Ww-fiJ">
+                                        <rect key="frame" x="198" y="0.0" width="35" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-1Q-53U">
+                                        <rect key="frame" x="174" y="21" width="82" height="99"/>
+                                        <state key="normal" title="Neues Spiel">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapOnNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeR-iw-QSa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w96-wC-f0p">
+                                        <rect key="frame" x="169" y="120" width="92" height="30"/>
+                                        <state key="normal" title="Einstellungen"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lrc-Ww-fiJ" firstAttribute="top" secondItem="MVf-Fh-DLq" secondAttribute="top" constant="30" id="HbT-fD-CaI"/>
+                                    <constraint firstItem="OZQ-1Q-53U" firstAttribute="top" secondItem="lrc-Ww-fiJ" secondAttribute="bottom" constant="30" id="VAt-fN-Bcg"/>
+                                    <constraint firstAttribute="height" constant="150" id="i9t-7K-Azv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="RWy-sV-ghn"/>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndD-py-iEv"/>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="t9l-2I-XB6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headline" destination="lrc-Ww-fiJ" id="BSh-A3-LIG"/>
+                        <outlet property="mainMenu" destination="MVf-Fh-DLq" id="abl-sU-Xb1"/>
+                        <outlet property="newGame" destination="OZQ-1Q-53U" id="zOQ-Nj-Ihc"/>
+                        <outlet property="settings" destination="w96-wC-f0p" id="zI5-hc-CdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="556" y="461"/>
         </scene>
     </scenes>
 </document>

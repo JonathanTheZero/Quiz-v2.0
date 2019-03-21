@@ -30,6 +30,8 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     
+    
+    
 
     @IBAction func tapOnSettings(_ sender: UIButton) {
         headline.text = "Erfolgreich geklickt"

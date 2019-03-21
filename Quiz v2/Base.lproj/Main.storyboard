@@ -22,17 +22,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-Fh-DLq">
-                                <rect key="frame" x="81" y="170" width="213" height="150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-Fh-DLq">
+                                <rect key="frame" x="81" y="120" width="213" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-Ww-fiJ">
-                                        <rect key="frame" x="89" y="0.0" width="35" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrc-Ww-fiJ">
+                                        <rect key="frame" x="89" y="0.0" width="35" height="91"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Quiz">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-1Q-53U">
-                                        <rect key="frame" x="65.5" y="20.5" width="82" height="99.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-1Q-53U">
+                                        <rect key="frame" x="65.5" y="91" width="82" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Tcb-rn-5RI"/>
+                                        </constraints>
                                         <state key="normal" title="Neues Spiel">
                                             <color key="titleShadowColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -40,8 +50,19 @@
                                             <action selector="tapOnNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeR-iw-QSa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w96-wC-f0p">
-                                        <rect key="frame" x="60.5" y="120" width="92" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRa-Ig-bec">
+                                        <rect key="frame" x="67.5" y="161" width="78" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69.5" id="JXr-Q5-lO0"/>
+                                            <constraint firstAttribute="height" constant="70" id="wiS-tR-D6s"/>
+                                        </constraints>
+                                        <state key="normal" title="Highscores"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w96-wC-f0p">
+                                        <rect key="frame" x="60.5" y="231" width="92" height="69"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="69.5" id="Nf6-kA-qax"/>
+                                        </constraints>
                                         <state key="normal" title="Einstellungen"/>
                                         <connections>
                                             <action selector="tapOnSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebD-St-z9K"/>
@@ -49,21 +70,23 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lrc-Ww-fiJ" firstAttribute="top" secondItem="MVf-Fh-DLq" secondAttribute="top" constant="30" id="HbT-fD-CaI"/>
+                                    <constraint firstItem="w96-wC-f0p" firstAttribute="top" secondItem="zRa-Ig-bec" secondAttribute="bottom" constant="20" id="ECG-Nv-TaI"/>
                                     <constraint firstItem="OZQ-1Q-53U" firstAttribute="top" secondItem="lrc-Ww-fiJ" secondAttribute="bottom" constant="30" id="VAt-fN-Bcg"/>
-                                    <constraint firstAttribute="height" constant="150" id="i9t-7K-Azv"/>
+                                    <constraint firstAttribute="height" constant="300" id="dhD-WT-e01"/>
+                                    <constraint firstItem="w96-wC-f0p" firstAttribute="top" secondItem="zRa-Ig-bec" secondAttribute="bottom" constant="20" id="zmz-EW-q0o"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="RWy-sV-ghn"/>
-                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndD-py-iEv"/>
-                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="t9l-2I-XB6"/>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EEE-cG-4Xi"/>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="O1I-jA-Fcc"/>
+                            <constraint firstItem="MVf-Fh-DLq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="nIJ-3o-pdq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="headline" destination="lrc-Ww-fiJ" id="BSh-A3-LIG"/>
+                        <outlet property="highscores" destination="zRa-Ig-bec" id="OSP-uU-hbE"/>
                         <outlet property="mainMenu" destination="MVf-Fh-DLq" id="abl-sU-Xb1"/>
                         <outlet property="newGame" destination="OZQ-1Q-53U" id="zOQ-Nj-Ihc"/>
                         <outlet property="settings" destination="w96-wC-f0p" id="zI5-hc-CdH"/>
@@ -71,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="136"/>
+            <point key="canvasLocation" x="-272.80000000000001" y="74.212893553223395"/>
         </scene>
     </scenes>
 </document>

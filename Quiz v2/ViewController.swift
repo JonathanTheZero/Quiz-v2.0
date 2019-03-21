@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var headline: UILabel!
     @IBOutlet weak var newGame: UIButton!
     @IBOutlet weak var settings: UIButton!
+    @IBOutlet weak var highscores: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

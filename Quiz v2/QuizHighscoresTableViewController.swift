@@ -12,6 +12,8 @@ class QuizHighscoresTableViewController: UITableViewController {
 
     //MARK: Properties
     
+    var highscores = [Highscore]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class QuizHighscoresTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadSampleScores()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +34,7 @@ class QuizHighscoresTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,5 +96,17 @@ class QuizHighscoresTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //MARK: Private Methods
+    
+    private func loadSampleScores(){
+        let photo1 = UIImage(named: "SampleProfilePic")
+        guard let score1 = Highscore(name: "Jonathan", photo: photo1, score: 5) else {
+            fatalError("Sample not working")
+        }
+        highscores += [score1]
+        
+    }
 
 }

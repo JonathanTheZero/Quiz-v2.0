@@ -10,7 +10,7 @@ import UIKit
 
 class QuizHighscoresTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -26,5 +26,6 @@ class QuizHighscoresTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }

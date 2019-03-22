@@ -10,6 +10,9 @@ import UIKit
 
 class QuizHighscoresTableViewController: UITableViewController {
 
+    //MARK: Properties
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G22010" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G22010" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -57,6 +57,9 @@
                                             <constraint firstAttribute="height" constant="70" id="wiS-tR-D6s"/>
                                         </constraints>
                                         <state key="normal" title="Highscores"/>
+                                        <connections>
+                                            <segue destination="82f-aK-jVC" kind="show" id="Hhg-aS-6W8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w96-wC-f0p">
                                         <rect key="frame" x="60.5" y="231" width="92" height="69"/>
@@ -70,10 +73,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="w96-wC-f0p" firstAttribute="top" secondItem="zRa-Ig-bec" secondAttribute="bottom" constant="20" id="ECG-Nv-TaI"/>
-                                    <constraint firstItem="OZQ-1Q-53U" firstAttribute="top" secondItem="lrc-Ww-fiJ" secondAttribute="bottom" constant="30" id="VAt-fN-Bcg"/>
                                     <constraint firstAttribute="height" constant="300" id="dhD-WT-e01"/>
-                                    <constraint firstItem="w96-wC-f0p" firstAttribute="top" secondItem="zRa-Ig-bec" secondAttribute="bottom" constant="20" id="zmz-EW-q0o"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -84,6 +84,7 @@
                             <constraint firstItem="MVf-Fh-DLq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="nIJ-3o-pdq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PXx-zk-mqH"/>
                     <connections>
                         <outlet property="headline" destination="lrc-Ww-fiJ" id="BSh-A3-LIG"/>
                         <outlet property="highscores" destination="zRa-Ig-bec" id="OSP-uU-hbE"/>
@@ -94,25 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="120"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GG5-SB-DvC">
-            <objects>
-                <viewController id="KCV-9V-8xI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EO7-NI-wfG"/>
-                        <viewControllerLayoutGuide type="bottom" id="Zuv-jJ-QiQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bzO-bW-Rkx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RlD-J6-cHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="862" y="119"/>
+            <point key="canvasLocation" x="516.5" y="118.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="6ed-xz-Ski">
@@ -162,7 +145,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svB-9e-gjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786" y="118"/>
+            <point key="canvasLocation" x="1462.5" y="117.5"/>
         </scene>
     </scenes>
 </document>

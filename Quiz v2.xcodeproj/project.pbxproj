@@ -14,6 +14,7 @@
 		640B375C22415443002305B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640B375A22415443002305B8 /* LaunchScreen.storyboard */; };
 		640B376722415443002305B8 /* Quiz_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B376622415443002305B8 /* Quiz_v2Tests.swift */; };
 		643E0F8822442D0100A2FDDB /* QuizHighscoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E0F8722442D0100A2FDDB /* QuizHighscoresTableViewCell.swift */; };
+		64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		640B376622415443002305B8 /* Quiz_v2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_v2Tests.swift; sourceTree = "<group>"; };
 		640B376822415443002305B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643E0F8722442D0100A2FDDB /* QuizHighscoresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewCell.swift; sourceTree = "<group>"; };
+		64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				640B375122415443002305B8 /* AppDelegate.swift */,
 				640B375322415443002305B8 /* ViewController.swift */,
 				640B375522415443002305B8 /* Main.storyboard */,
+				64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */,
 				643E0F8722442D0100A2FDDB /* QuizHighscoresTableViewCell.swift */,
 				640B375822415443002305B8 /* Assets.xcassets */,
 				640B375A22415443002305B8 /* LaunchScreen.storyboard */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				640B375422415443002305B8 /* ViewController.swift in Sources */,
+				64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */,
 				640B375222415443002305B8 /* AppDelegate.swift in Sources */,
 				643E0F8822442D0100A2FDDB /* QuizHighscoresTableViewCell.swift in Sources */,
 			);

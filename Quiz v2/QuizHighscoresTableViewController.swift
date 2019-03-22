@@ -38,19 +38,29 @@ class QuizHighscoresTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return highscores.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "QuizHighscoresTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? QuizHighscoresTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of QuizHighscoresTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let score = highscores[indexPath.row]
+        
+        cell.nameLabel.text = score.name
+        cell.userImageView.image = score.photo
+        cell.scoreLabel.text = "Score: " + String(score.score)
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -101,12 +111,11 @@ class QuizHighscoresTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleScores(){
-        let photo1 = UIImage(named: "SampleProfilePic")
+        let photo1 = #imageLiteral(resourceName: "Image")
         guard let score1 = Highscore(name: "Jonathan", photo: photo1, score: 5) else {
             fatalError("Sample not working")
         }
         highscores += [score1]
         
     }
-
 }

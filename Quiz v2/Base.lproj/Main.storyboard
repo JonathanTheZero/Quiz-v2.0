@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="513" y="140"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Quiz Highscores Table View Controller-->
         <scene sceneID="6ed-xz-Ski">
             <objects>
-                <tableViewController id="82f-aK-jVC" sceneMemberID="viewController">
+                <tableViewController id="82f-aK-jVC" customClass="QuizHighscoresTableViewController" customModule="Quiz_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="4oP-En-Sij">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,15 +143,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBs-Pv-LKD">
-                                            <rect key="frame" x="95" y="37" width="272" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33c-ei-XNd">
+                                            <rect key="frame" x="95" y="37" width="272" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="highscoreDisplay" destination="MBs-Pv-LKD" id="5eu-Mm-Qsb"/>
                                     <outlet property="nameLabel" destination="6zd-cU-VK3" id="oYD-SR-9ED"/>
+                                    <outlet property="scoreLabel" destination="33c-ei-XNd" id="zH6-30-lar"/>
                                     <outlet property="userImageView" destination="z0h-eY-sIH" id="hNx-Ry-zcE"/>
                                 </connections>
                             </tableViewCell>
@@ -164,7 +167,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svB-9e-gjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="140"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="139.880059970015"/>
         </scene>
     </scenes>
 </document>

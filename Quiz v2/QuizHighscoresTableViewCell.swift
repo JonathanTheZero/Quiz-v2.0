@@ -14,7 +14,7 @@ class QuizHighscoresTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var highscoreDisplay: UIStackView!
+    @IBOutlet weak var scoreLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

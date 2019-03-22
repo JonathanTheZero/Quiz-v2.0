@@ -56,7 +56,7 @@ class QuizHighscoresTableViewController: UITableViewController {
         
         cell.nameLabel.text = score.name
         cell.userImageView.image = score.photo
-        cell.scoreLabel.text = "Score: "// + String(score.score)
+        cell.scoreLabel.text = "Score: " + String(score.score)
         
         return cell
     }

@@ -24,21 +24,33 @@
                                 <rect key="frame" x="16" y="218" width="167" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapOnButton1:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="PKu-eO-u31"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK4-BQ-LEa">
                                 <rect key="frame" x="16" y="287" width="167" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapOnButton3:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="DbM-yz-lS0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-WT-tTB">
                                 <rect key="frame" x="192" y="287" width="167" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapOnButton4:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="oSj-e0-B8C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lna-e2-Dkd">
                                 <rect key="frame" x="192" y="218" width="167" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapOnButton2:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="dXq-8A-p3R"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3N-fq-a6C">
                                 <rect key="frame" x="111" y="134" width="152" height="21"/>
@@ -50,6 +62,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="answerButton1" destination="gZe-cJ-Yex" id="SwH-b3-GAD"/>
+                        <outlet property="answerButton2" destination="Lna-e2-Dkd" id="kLT-JA-Z69"/>
+                        <outlet property="answerButton3" destination="bK4-BQ-LEa" id="McH-J7-crj"/>
+                        <outlet property="answerButton4" destination="ws7-WT-tTB" id="PhK-mZ-zjX"/>
+                        <outlet property="questionHeadline" destination="Q3N-fq-a6C" id="K1o-LC-NIO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rhx-Yj-gVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

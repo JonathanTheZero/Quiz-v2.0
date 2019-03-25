@@ -17,13 +17,19 @@ class QuizQuestionViewController: UIViewController {
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
+    @IBOutlet weak var outerStack: UIStackView!
+    @IBOutlet weak var innerStackRowOne: UIStackView!
+    @IBOutlet weak var innerStackRowTwo: UIStackView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var q = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
     
-    var correct: Int = 0
+    var correctVal = 0
+    var score = 0
     
     override func viewDidLoad() {
         setText(question: q)
+        scoreLabel.text = ""
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -43,18 +49,22 @@ class QuizQuestionViewController: UIViewController {
 
     func setText(question: Question){
         questionHeadline.text = question.getQuestion()
+
         answerButton1.setTitle(question.getAnswer(i: 0), for: .normal)
         answerButton2.setTitle(question.getAnswer(i: 1), for: .normal)
         answerButton3.setTitle(question.getAnswer(i: 2), for: .normal)
         answerButton4.setTitle(question.getAnswer(i: 3), for: .normal)
-        correct = q.getCorrect()
+        
+        correctVal = q.getCorrect()
     }
     
     //MARK: Actions
     
     @IBAction func tapOnButton1(_ sender: UIButton) {
-        if(correct == 1){
+        if(correctVal == 1){
             questionHeadline.text = "Glückwunsch"
+            score += 1
+            scoreLabel.text = "Score: " + String(score)
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -62,8 +72,10 @@ class QuizQuestionViewController: UIViewController {
     }
     
     @IBAction func tapOnButton2(_ sender: UIButton) {
-        if(correct == 2){
+        if(correctVal == 2){
             questionHeadline.text = "Glückwunsch"
+            score += 1
+            scoreLabel.text = "Score: " + String(score)
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -71,8 +83,10 @@ class QuizQuestionViewController: UIViewController {
     }
     
     @IBAction func tapOnButton3(_ sender: UIButton) {
-        if(correct == 3){
+        if(correctVal == 3){
             questionHeadline.text = "Glückwunsch"
+            score += 1
+            scoreLabel.text = "Score: " + String(score)
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -80,8 +94,10 @@ class QuizQuestionViewController: UIViewController {
     }
     
     @IBAction func tapOnButton4(_ sender: UIButton) {
-        if(correct == 4){
+        if(correctVal == 4){
             questionHeadline.text = "Glückwunsch"
+            score += 1
+            scoreLabel.text = "Score: " + String(score)
         }
         else{
             questionHeadline.text = "Leider falsch"

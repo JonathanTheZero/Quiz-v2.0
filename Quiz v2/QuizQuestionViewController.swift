@@ -43,10 +43,10 @@ class QuizQuestionViewController: UIViewController {
 
     func setText(question: Question){
         questionHeadline.text = question.getQuestion()
-        answerButton1.setTitle(question.getAnswer(i: 1), for: .normal)
-        answerButton2.setTitle(question.getAnswer(i: 2), for: .normal)
-        answerButton3.setTitle(question.getAnswer(i: 3), for: .normal)
-        answerButton4.setTitle(question.getAnswer(i: 4), for: .normal)
+        answerButton1.setTitle(question.getAnswer(i: 0), for: .normal)
+        answerButton2.setTitle(question.getAnswer(i: 1), for: .normal)
+        answerButton3.setTitle(question.getAnswer(i: 2), for: .normal)
+        answerButton4.setTitle(question.getAnswer(i: 3), for: .normal)
         correct = q.getCorrect()
     }
     

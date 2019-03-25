@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     //MARK: Properties
     
@@ -29,11 +29,5 @@ class ViewController: UIViewController {
     }
 
     //MARK: Actions
-    
-    
-    
-    
-    
-    
 }
 

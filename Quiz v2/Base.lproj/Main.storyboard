@@ -16,49 +16,80 @@
                         <viewControllerLayoutGuide type="top" id="A1M-Fr-kxC"/>
                         <viewControllerLayoutGuide type="bottom" id="T7q-Kt-mtS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a4q-L8-bee">
+                    <view key="view" contentMode="scaleToFill" id="a4q-L8-bee" customClass="QuizHighscoresTableViewCell" customModule="Quiz_v2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-cJ-Yex">
-                                <rect key="frame" x="16" y="218" width="167" height="61"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3lk-Ky-d4H">
+                                <rect key="frame" x="57" y="217" width="260" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapOnButton1:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="PKu-eO-u31"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK4-BQ-LEa">
-                                <rect key="frame" x="16" y="287" width="167" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapOnButton3:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="DbM-yz-lS0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-WT-tTB">
-                                <rect key="frame" x="192" y="287" width="167" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapOnButton4:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="oSj-e0-B8C"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lna-e2-Dkd">
-                                <rect key="frame" x="192" y="218" width="167" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapOnButton2:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="dXq-8A-p3R"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3N-fq-a6C">
-                                <rect key="frame" x="111" y="134" width="152" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3N-fq-a6C">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jlw-Ye-HYv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUs-RY-Gr9">
+                                        <rect key="frame" x="0.0" y="30" width="260" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-cJ-Yex">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="Ybp-LN-uep"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tapOnButton1:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="PKu-eO-u31"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lna-e2-Dkd">
+                                                <rect key="frame" x="130" y="0.0" width="130" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="qfh-ba-iLt"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tapOnButton2:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="dXq-8A-p3R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Lna-e2-Dkd" firstAttribute="leading" secondItem="gZe-cJ-Yex" secondAttribute="trailing" constant="20" id="T9r-yS-tkg"/>
+                                            <constraint firstAttribute="height" constant="65" id="kSD-R6-HG7"/>
+                                            <constraint firstAttribute="bottom" secondItem="gZe-cJ-Yex" secondAttribute="bottom" constant="20" id="u77-DY-Jod"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGP-fm-CMp">
+                                        <rect key="frame" x="0.0" y="95" width="260" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK4-BQ-LEa">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="65"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="8pb-Yj-a7e"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tapOnButton3:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="DbM-yz-lS0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws7-WT-tTB">
+                                                <rect key="frame" x="130" y="0.0" width="130" height="65"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tapOnButton4:" destination="4Cz-1P-Zxn" eventType="touchUpInside" id="oSj-e0-B8C"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="aaN-bp-82e"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -74,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="2400.8000000000002" y="-658.02098950524737"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz_v2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="Quiz_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -111,7 +142,6 @@
                                             <color key="titleShadowColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapOnNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zmf-2d-Vnn"/>
                                             <segue destination="4Cz-1P-Zxn" kind="show" id="G6E-3c-vKr"/>
                                         </connections>
                                     </button>
@@ -133,7 +163,6 @@
                                         </constraints>
                                         <state key="normal" title="Einstellungen"/>
                                         <connections>
-                                            <action selector="tapOnSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebD-St-z9K"/>
                                             <segue destination="R1g-IQ-6sG" kind="show" id="nWk-1s-wGi"/>
                                         </connections>
                                     </button>

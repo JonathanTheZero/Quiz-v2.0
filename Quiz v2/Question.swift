@@ -38,5 +38,5 @@ class Question {
     func getCorrect() -> Int{
         return correct
     }
-    
+
 }

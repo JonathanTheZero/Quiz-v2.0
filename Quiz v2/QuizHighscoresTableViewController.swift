@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class QuizHighscoresTableViewController: UITableViewController {
 
@@ -122,4 +123,18 @@ class QuizHighscoresTableViewController: UITableViewController {
         highscores += [score1]
         
     }
+    
+    private func loadScores() -> [Highscore]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Highscore.ArchiveURL.path) as? [Highscore]
+    }
+    
+    private func saveScore(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(highscores, toFile: Highscore.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Highscore successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save highscore...", log: OSLog.default, type: .error)
+        }
+    }
+    
 }

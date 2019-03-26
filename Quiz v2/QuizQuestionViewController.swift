@@ -22,13 +22,15 @@ class QuizQuestionViewController: UIViewController {
     @IBOutlet weak var innerStackRowTwo: UIStackView!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var q = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
+    var questions = [Question]()
+    
     
     var correctVal = 0
     var score = 0
     
     override func viewDidLoad() {
-        setText(question: q)
+        generateQuestions()
+        setText(question: questions[0])
         scoreLabel.text = ""
         super.viewDidLoad()
 
@@ -56,7 +58,7 @@ class QuizQuestionViewController: UIViewController {
         answerButton3.setTitle(question.getAnswer(i: 2), for: .normal)
         answerButton4.setTitle(question.getAnswer(i: 3), for: .normal)
         
-        correctVal = q.getCorrect()
+        correctVal = question.getCorrect()
     }
     
     //MARK: Actions
@@ -65,6 +67,7 @@ class QuizQuestionViewController: UIViewController {
         if(correctVal == 1){
             questionHeadline.text = "Glückwunsch"
             score += 1
+            setText(question: questions[score])
             scoreLabel.text = "Score: " + String(score)
         }
         else{
@@ -76,6 +79,7 @@ class QuizQuestionViewController: UIViewController {
         if(correctVal == 2){
             questionHeadline.text = "Glückwunsch"
             score += 1
+            setText(question: questions[score])
             scoreLabel.text = "Score: " + String(score)
         }
         else{
@@ -87,6 +91,7 @@ class QuizQuestionViewController: UIViewController {
         if(correctVal == 3){
             questionHeadline.text = "Glückwunsch"
             score += 1
+            setText(question: questions[score])
             scoreLabel.text = "Score: " + String(score)
         }
         else{
@@ -98,10 +103,16 @@ class QuizQuestionViewController: UIViewController {
         if(correctVal == 4){
             questionHeadline.text = "Glückwunsch"
             score += 1
+            setText(question: questions[score])
             scoreLabel.text = "Score: " + String(score)
         }
         else{
             questionHeadline.text = "Leider falsch"
         }
+    }
+    
+    func generateQuestions(){
+        questions[0] = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
+        questions[1] = Question(quest: "Welceh Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!
     }
 }

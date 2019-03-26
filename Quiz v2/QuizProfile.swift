@@ -25,4 +25,14 @@ class QuizProfile {
         
     }
     
+    init?(name: String, photo: UIImage, score: Int) {
+        if name.isEmpty || score < 0 {
+            return nil
+        }
+        
+        self.name = name
+        self.photo = photo
+        self.highestScore = score
+    }
+    
 }

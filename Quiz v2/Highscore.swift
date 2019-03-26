@@ -33,8 +33,11 @@ class Highscore: NSObject, NSCoding {
         self.score = score
     }
     
-    init(profile: QuizProfile){
+    init?(profile: QuizProfile){
         
+        self.name = profile.name
+        self.photo = profile.photo
+        self.score = 0 //TBC
     }
     
     

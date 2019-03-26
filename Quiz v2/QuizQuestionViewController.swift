@@ -65,10 +65,7 @@ class QuizQuestionViewController: UIViewController {
     
     @IBAction func tapOnButton1(_ sender: UIButton) {
         if(correctVal == 1){
-            questionHeadline.text = "Glückwunsch"
-            score += 1
-            setText(question: questions[score])
-            scoreLabel.text = "Score: " + String(score)
+            correct()
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -77,10 +74,7 @@ class QuizQuestionViewController: UIViewController {
     
     @IBAction func tapOnButton2(_ sender: UIButton) {
         if(correctVal == 2){
-            questionHeadline.text = "Glückwunsch"
-            score += 1
-            setText(question: questions[score])
-            scoreLabel.text = "Score: " + String(score)
+            correct()
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -89,10 +83,7 @@ class QuizQuestionViewController: UIViewController {
     
     @IBAction func tapOnButton3(_ sender: UIButton) {
         if(correctVal == 3){
-            questionHeadline.text = "Glückwunsch"
-            score += 1
-            setText(question: questions[score])
-            scoreLabel.text = "Score: " + String(score)
+            correct()
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -101,10 +92,7 @@ class QuizQuestionViewController: UIViewController {
     
     @IBAction func tapOnButton4(_ sender: UIButton) {
         if(correctVal == 4){
-            questionHeadline.text = "Glückwunsch"
-            score += 1
-            setText(question: questions[score])
-            scoreLabel.text = "Score: " + String(score)
+            correct()
         }
         else{
             questionHeadline.text = "Leider falsch"
@@ -112,7 +100,24 @@ class QuizQuestionViewController: UIViewController {
     }
     
     func generateQuestions(){
-        questions[0] = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
-        questions[1] = Question(quest: "Welceh Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!
+        /*questions[0] = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
+        questions[1] = Question(quest: "Welceh Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!*/
+        let q1 = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
+        let q2 = Question(quest: "Welche Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!
+        questions += [q1, q2]
+    }
+    
+    private func correct(){
+        questionHeadline.text = "Glückwunsch"
+        score += 1
+        if score >= questions.count {
+            //TBA: Finish screen
+            questionHeadline.text = "Glückwunsch, du hast alle Fragen richtig beantwrotet!"
+            scoreLabel.text = "Score: " + String(score)
+        }
+        else {
+            setText(question: questions[score])
+            scoreLabel.text = "Score: " + String(score)
+        }
     }
 }

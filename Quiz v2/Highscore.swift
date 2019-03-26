@@ -33,6 +33,10 @@ class Highscore: NSObject, NSCoding {
         self.score = score
     }
     
+    init(profile: QuizProfile){
+        
+    }
+    
     
     struct PropertyKey {
         static let name = "name"

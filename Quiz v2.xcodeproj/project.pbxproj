@@ -16,6 +16,7 @@
 		641480B02247C498003430AB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641480AF2247C498003430AB /* Question.swift */; };
 		641480B62247ED8D003430AB /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641480B52247ED8D003430AB /* QuizQuestionViewController.swift */; };
 		643E0F8822442D0100A2FDDB /* QuizHighscoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E0F8722442D0100A2FDDB /* QuizHighscoresTableViewCell.swift */; };
+		64CA16C9224AC34800D73DF3 /* QuizProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CA16C8224AC34800D73DF3 /* QuizProfile.swift */; };
 		64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */; };
 		64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2482224550AA005DBEF6 /* Highscore.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		641480AF2247C498003430AB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		641480B52247ED8D003430AB /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		643E0F8722442D0100A2FDDB /* QuizHighscoresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewCell.swift; sourceTree = "<group>"; };
+		64CA16C8224AC34800D73DF3 /* QuizProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProfile.swift; sourceTree = "<group>"; };
 		64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewController.swift; sourceTree = "<group>"; };
 		64EB2482224550AA005DBEF6 /* Highscore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				640B375322415443002305B8 /* QuizViewController.swift */,
 				641480B52247ED8D003430AB /* QuizQuestionViewController.swift */,
 				64EB2482224550AA005DBEF6 /* Highscore.swift */,
+				64CA16C8224AC34800D73DF3 /* QuizProfile.swift */,
 				640B375522415443002305B8 /* Main.storyboard */,
 				64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */,
 				641480AF2247C498003430AB /* Question.swift */,
@@ -222,6 +225,7 @@
 				641480B02247C498003430AB /* Question.swift in Sources */,
 				643E0F8822442D0100A2FDDB /* QuizHighscoresTableViewCell.swift in Sources */,
 				64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */,
+				64CA16C9224AC34800D73DF3 /* QuizProfile.swift in Sources */,
 				641480B62247ED8D003430AB /* QuizQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +466,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-/* End of XCConfigurationList section */
+/* End XCConfigurationList section */
 	};
 	rootObject = 640B374622415443002305B8 /* Project object */;
 }

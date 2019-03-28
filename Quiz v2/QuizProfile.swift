@@ -7,32 +7,36 @@
 //
 
 import UIKit
+import os.log
 
-class QuizProfile {
+class QuizProfile: Highscore {
     
-    var name: String
-    var photo: UIImage?
-    var highestScore: Int
-    
-    init?(name: String, photo: UIImage) {
-        if name.isEmpty {
-            return nil
-        }
-        
-        self.name = name
-        self.photo = photo
-        highestScore = 0
-        
-    }
+    //MARK: Properties
+    private var highestScore: Int
     
     init?(name: String, photo: UIImage, score: Int) {
-        if name.isEmpty || score < 0 {
+        self.highestScore = 0
+        if score > self.highestScore {
+            self.highestScore = score
+        }
+        super.init(name: name, photo: photo, score: score)
+    }
+    
+    //MARK: NSCoding
+    
+    required convenience init?(coder aDecoder: NSCoder){
+        // The name is required. If we cannot decode a name string, the initializer should fail.
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            os_log("Unable to decode the name for a Highscore/QuizProfile object.", log: OSLog.default, type: .debug)
             return nil
         }
         
-        self.name = name
-        self.photo = photo
-        self.highestScore = score
+        // Because photo is an optional property of Highscore/QuizProfile, just use conditional cast.
+        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        
+        let score = aDecoder.decodeInteger(forKey: PropertyKey.score)
+        
+        // Must call designated initializer.
+        self.init(name: name, photo: photo!, score: score)
     }
-    
 }

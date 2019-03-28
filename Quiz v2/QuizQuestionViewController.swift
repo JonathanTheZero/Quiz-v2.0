@@ -24,7 +24,6 @@ class QuizQuestionViewController: UIViewController {
     
     var questions = [Question]()
     
-    
     var correctVal = 0
     var score = 0
     
@@ -68,7 +67,7 @@ class QuizQuestionViewController: UIViewController {
             correct()
         }
         else{
-            questionHeadline.text = "Leider falsch"
+            wrong()
         }
     }
     
@@ -77,7 +76,7 @@ class QuizQuestionViewController: UIViewController {
             correct()
         }
         else{
-            questionHeadline.text = "Leider falsch"
+            wrong()
         }
     }
     
@@ -86,7 +85,7 @@ class QuizQuestionViewController: UIViewController {
             correct()
         }
         else{
-            questionHeadline.text = "Leider falsch"
+            wrong()
         }
     }
     
@@ -95,7 +94,7 @@ class QuizQuestionViewController: UIViewController {
             correct()
         }
         else{
-            questionHeadline.text = "Leider falsch"
+            wrong()
         }
     }
     
@@ -119,5 +118,12 @@ class QuizQuestionViewController: UIViewController {
             setText(question: questions[score])
             scoreLabel.text = "Score: " + String(score)
         }
+    }
+    
+    private func wrong(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! ExitScreenViewController
+        self.present(nextViewController, animated:true, completion:nil)
     }
 }

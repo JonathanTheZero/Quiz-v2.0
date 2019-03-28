@@ -128,7 +128,7 @@ class QuizHighscoresTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Highscore.ArchiveURL.path) as? [Highscore]
     }
     
-    private func saveScore(){
+    private func saveScores(){
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(highscores, toFile: Highscore.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Highscore successfully saved.", log: OSLog.default, type: .debug)

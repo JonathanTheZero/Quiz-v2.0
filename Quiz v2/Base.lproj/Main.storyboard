@@ -20,9 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3lk-Ky-d4H">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3lk-Ky-d4H">
                                 <rect key="frame" x="57" y="217" width="260" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3N-fq-a6C">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="55"/>
@@ -105,6 +104,10 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3lk-Ky-d4H" firstAttribute="centerX" secondItem="a4q-L8-bee" secondAttribute="centerX" id="9wX-72-Zsb"/>
+                            <constraint firstItem="3lk-Ky-d4H" firstAttribute="top" secondItem="A1M-Fr-kxC" secondAttribute="bottom" constant="153" id="iy7-jD-t2O"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="answerButton1" destination="gZe-cJ-Yex" id="SwH-b3-GAD"/>

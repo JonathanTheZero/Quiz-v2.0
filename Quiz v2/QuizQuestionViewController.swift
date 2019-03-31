@@ -25,7 +25,7 @@ class QuizQuestionViewController: UIViewController {
     var questions = [Question]()
     
     var correctVal = 0
-    var score = 0
+    public var score = 0
     
     override func viewDidLoad() {
         generateQuestions()
@@ -121,9 +121,12 @@ class QuizQuestionViewController: UIViewController {
     }
     
     private func wrong(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        /*let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! ExitScreenViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        self.present(nextViewController, animated:true, completion:nil)*/
+        let vc = ExitScreenViewController(nibName: "ExitViewController", bundle: nil)
+        //vc.yourScoreLabel.text = "Your Score: "
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -9,10 +9,13 @@
 import UIKit
 
 class ExitScreenViewController: UIViewController {
-
+    @IBOutlet weak var labelStack: UIStackView!
+    @IBOutlet weak var youLostLabel: UILabel!
+    @IBOutlet weak var yourScoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     

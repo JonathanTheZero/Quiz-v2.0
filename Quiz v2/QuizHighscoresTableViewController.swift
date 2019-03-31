@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class QuizHighscoresTableViewController: UITableViewController {
+class QuizHighscoresTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     //MARK: Properties
     
@@ -110,6 +110,33 @@ class QuizHighscoresTableViewController: UITableViewController {
     }
     */
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        photoImageView.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Events?
+    
+    @IBAction func selectPhotoFromLibrary(_ sender: UITapGestureRecognizer) {
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
     
     //MARK: Private Methods
     
@@ -119,8 +146,11 @@ class QuizHighscoresTableViewController: UITableViewController {
         guard let score1 = Highscore(name: "Jonathan", photo: photo1, score: 5) else {
             fatalError("Sample not working")
         }
+        guard let score2 = Highscore(name: "Test", photo: UIImage(named: ""), score: 4) else {
+            fatalError("X")
+        }
         
-        highscores += [score1]
+        highscores += [score1, score2]
         
     }
     

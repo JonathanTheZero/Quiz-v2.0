@@ -121,12 +121,20 @@ class QuizQuestionViewController: UIViewController {
     }
     
     private func wrong(){
-        /*let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let alert = UIAlertController(title: "Was ist dein Name?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil))
         
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! ExitScreenViewController
-        self.present(nextViewController, animated:true, completion:nil)*/
-        let vc = ExitScreenViewController(nibName: "ExitViewController", bundle: nil)
-        //vc.yourScoreLabel.text = "Your Score: "
-        navigationController?.pushViewController(vc, animated: true)
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Gib hier deinen Namen ein"
+        })
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            if let name = alert.textFields?.first?.text {
+                var h = Highscore(name: name, photo: UIImage(named: "DefaultProfilePicture")!, score: self.score)
+            }
+        }))
+        
+        self.present(alert, animated: true)
     }
 }

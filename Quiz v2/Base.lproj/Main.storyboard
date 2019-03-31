@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="2400.8000000000002" y="139.880059970015"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="IWy-5t-edr">
             <objects>
-                <viewController id="R1g-IQ-6sG" sceneMemberID="viewController">
+                <viewController id="R1g-IQ-6sG" customClass="SettingsViewController" customModule="Quiz_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Kn-Lq-MH1"/>
                         <viewControllerLayoutGuide type="bottom" id="hmn-KB-mcT"/>
@@ -316,14 +316,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-mJ-OQt">
-                                <rect key="frame" x="164" y="181" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="azZ-mR-NpS">
+                                <rect key="frame" x="135" y="72" width="105" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTe-Ho-hBs">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BeO-qB-2R7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-mJ-OQt">
+                                        <rect key="frame" x="0.0" y="50" width="105" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="y2N-KT-m1L"/>
+                                        </constraints>
+                                        <state key="normal" title="Neues Profil"/>
+                                        <connections>
+                                            <action selector="clickOnNewProfile:" destination="R1g-IQ-6sG" eventType="touchUpInside" id="DuG-SH-Lno"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-XP-H7i">
+                                        <rect key="frame" x="0.0" y="150" width="105" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="7h9-ft-LG4"/>
+                                        </constraints>
+                                        <state key="normal" title="Profil wechseln"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="azZ-mR-NpS" firstAttribute="leading" secondItem="0qY-eo-xgU" secondAttribute="leading" constant="135" id="ED7-vr-NZV"/>
+                            <constraint firstItem="azZ-mR-NpS" firstAttribute="centerX" secondItem="0qY-eo-xgU" secondAttribute="centerX" id="TBk-BT-BzL"/>
+                            <constraint firstItem="azZ-mR-NpS" firstAttribute="top" secondItem="3Kn-Lq-MH1" secondAttribute="bottom" constant="8" symbolic="YES" id="uiX-7K-VIM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changeProfile" destination="PaU-XP-H7i" id="fTH-Yv-rzP"/>
+                        <outlet property="createNewProfile" destination="tab-mJ-OQt" id="ART-IO-MuO"/>
+                        <outlet property="profileLabel" destination="oTe-Ho-hBs" id="QSa-3a-Ekb"/>
+                        <outlet property="profileStack" destination="azZ-mR-NpS" id="Xag-Cy-ObN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7a-51-CFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -114,7 +114,7 @@ class QuizHighscoresTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleScores(){
-        let photo1 = UIImage(named: "Image") //TODO: Correct Image References
+        let photo1 = UIImage(named: "Image")
         
         guard let score1 = Highscore(name: "Jonathan", photo: photo1, score: 5) else {
             fatalError("Sample not working")

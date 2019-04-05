@@ -103,15 +103,37 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddItem":
+            os_log("Adding a new Highscore.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let quizHighscoresTable = segue.destination as? QuizHighscoresTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedScoreCell = sender as? QuizHighscoresTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedScoreCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedScore = highscores[indexPath.row]
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
     
     @IBAction func unwindToHighscoreList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? QuizQuestionViewController, let highscore = sourceViewController.h {

@@ -23,6 +23,7 @@ class QuizQuestionViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     var questions = [Question]()
+    var h = Highscore(name: "", photo: UIImage(named: "DefaultProfilePicture"), score: 0)
     
     var correctVal = 0
     public var score = 0
@@ -131,7 +132,8 @@ class QuizQuestionViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             
             if let name = alert.textFields?.first?.text {
-                var h = Highscore(name: name, photo: UIImage(named: "DefaultProfilePicture")!, score: self.score)
+                self.h = Highscore(name: name, photo: UIImage(named: "DefaultProfilePicture")!, score: self.score)
+                self.navigationController?.popViewController(animated: true)
             }
         }))
         

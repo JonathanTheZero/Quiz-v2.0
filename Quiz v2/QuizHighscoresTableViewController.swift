@@ -24,9 +24,12 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadSampleScores()
-        
-        
+        if let sampleScores = loadScores(){
+            highscores += sampleScores
+        }
+        else {
+            loadSampleScores()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,17 +76,17 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
     }
     */
 
-    /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            highscores.remove(at: indexPath.row)
+            saveScores()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -110,7 +113,26 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
     }
     */
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @IBAction func unwindToHighscoreList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? QuizQuestionViewController, let highscore = sourceViewController.h {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing highscore TBA since no check yet
+                highscores[selectedIndexPath.row] = highscore
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new highscore.
+                let newIndexPath = IndexPath(row: highscores.count, section: 0)
+                
+                highscores.append(highscore)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            loadScores()
+        }
+    }
+    
+    /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
@@ -122,7 +144,7 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
-    }
+    }*/
     
     //MARK: Events?
     
@@ -146,8 +168,8 @@ class QuizHighscoresTableViewController: UITableViewController, UIImagePickerCon
         guard let score1 = Highscore(name: "Jonathan", photo: photo1, score: 5) else {
             fatalError("Sample not working")
         }
-        guard let score2 = Highscore(name: "Test", photo: UIImage(named: ""), score: 4) else {
-            fatalError("X")
+        guard let score2 = Highscore(name: "Test", photo: UIImage(named: "SampleProfilePicture"), score: 4) else {
+            fatalError("Sample 2 not working")
         }
         
         highscores += [score1, score2]

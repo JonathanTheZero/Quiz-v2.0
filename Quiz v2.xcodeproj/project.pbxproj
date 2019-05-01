@@ -21,6 +21,8 @@
 		64E2DDD3224D58CA0083BD17 /* ExitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2DDD2224D58CA0083BD17 /* ExitScreenViewController.swift */; };
 		64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */; };
 		64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2482224550AA005DBEF6 /* Highscore.swift */; };
+		869EC5DA2279F76400B01145 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 869EC5D82279F76400B01145 /* ProgressHUD.bundle */; };
+		869EC5DB2279F76400B01145 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 869EC5D92279F76400B01145 /* ProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		64E2DDD2224D58CA0083BD17 /* ExitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitScreenViewController.swift; sourceTree = "<group>"; };
 		64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewController.swift; sourceTree = "<group>"; };
 		64EB2482224550AA005DBEF6 /* Highscore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		869EC5D62279F76300B01145 /* Quiz v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiz v2-Bridging-Header.h"; sourceTree = "<group>"; };
+		869EC5D72279F76400B01145 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.h"; sourceTree = "<group>"; };
+		869EC5D82279F76400B01145 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.bundle"; sourceTree = "<group>"; };
+		869EC5D92279F76400B01145 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,10 @@
 				640B375022415443002305B8 /* Quiz v2 */,
 				640B376522415443002305B8 /* Quiz v2Tests */,
 				640B374F22415443002305B8 /* Products */,
+				869EC5D82279F76400B01145 /* ProgressHUD.bundle */,
+				869EC5D72279F76400B01145 /* ProgressHUD.h */,
+				869EC5D92279F76400B01145 /* ProgressHUD.m */,
+				869EC5D62279F76300B01145 /* Quiz v2-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869EC5DA2279F76400B01145 /* ProgressHUD.bundle in Resources */,
 				640B375C22415443002305B8 /* LaunchScreen.storyboard in Resources */,
 				640B375922415443002305B8 /* Assets.xcassets in Resources */,
 				640B375722415443002305B8 /* Main.storyboard in Resources */,
@@ -231,6 +242,7 @@
 				64CB50992250CAAC002F3BC7 /* SettingsViewController.swift in Sources */,
 				641480B02247C498003430AB /* Question.swift in Sources */,
 				643E0F8822442D0100A2FDDB /* QuizHighscoresTableViewCell.swift in Sources */,
+				869EC5DB2279F76400B01145 /* ProgressHUD.m in Sources */,
 				64E2DDD3224D58CA0083BD17 /* ExitScreenViewController.swift in Sources */,
 				64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */,
 				64CA16C9224AC34800D73DF3 /* QuizProfile.swift in Sources */,
@@ -386,12 +398,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5S8U55DUCL;
 				INFOPLIST_FILE = "Quiz v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JFKF.Quiz-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiz v2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -402,12 +417,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5S8U55DUCL;
 				INFOPLIST_FILE = "Quiz v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JFKF.Quiz-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiz v2-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

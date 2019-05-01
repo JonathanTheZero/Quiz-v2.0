@@ -41,6 +41,7 @@ class QuizQuestionViewController: UIViewController {
 
     /*
     // MARK: - Navigation
+     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,6 +49,12 @@ class QuizQuestionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func quitQuiz(){
+        /*let next:QuizViewController = storyboard?.instantiateViewController(withIdentifier:"QuizViewController") as! QuizViewController
+        self.navigationController?.pushViewController(next, animated: true)*/
+        let viewController = QuizViewController(nibName: "QuizViewController", bundle: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 
     func setText(question: Question){
         questionHeadline.text = question.getQuestion()
@@ -103,16 +110,22 @@ class QuizQuestionViewController: UIViewController {
         questions[1] = Question(quest: "Welceh Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!*/
         let q1 = Question(quest: "Wie heißt die Hauptstadt von Deutschland?", answer1: "München", answer2: "Berlin", answer3: "Hamburg", answer4: "Bremen", corr: 2)!
         let q2 = Question(quest: "Welche Flüssigkeit schmilzt bei 0°C?", answer1: "Essig", answer2: "Cola", answer3: "Wasser", answer4: "Whisky", corr: 3)!
-        questions += [q1, q2]
+        let q3 = Question(quest: "Wer ist am coolsten?", answer1: "Katinka", answer2: "Jonathan", answer3: "Herr Großkamp", answer4: "Franz", corr: 1)!
+        questions += [q1, q2, q3]
     }
     
     private func correct(){
-        questionHeadline.text = "Glückwunsch"
+        ProgressHUD.showSuccess("Richtig")
         score += 1
         if score >= questions.count {
             //TBA: Finish screen
-            questionHeadline.text = "Glückwunsch, du hast alle Fragen richtig beantwrotet!"
             scoreLabel.text = "Score: " + String(score)
+            let alert = UIAlertController(title: "Glückwunsch!", message: "Du hast alle Fragen richtig beantwortet", preferredStyle: .alert)
+            let finishAction = UIAlertAction(title: "OK", style: .default)
+            { (alertAction) in
+                self.quitQuiz()}
+            alert.addAction(finishAction)
+            self.present(alert, animated: true, completion: nil)
         }
         else {
             setText(question: questions[score])
@@ -121,6 +134,18 @@ class QuizQuestionViewController: UIViewController {
     }
     
     private func wrong(){
+        ProgressHUD.showError("Falsch")
+        let alert = UIAlertController(title: "Schade, probiers doch gleich noch einmal", message: "Was ist dein Name?", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Bitte gib hier deinen Namen ein"
+        })
+        let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in
+        //    self.
+        }
+        
+        //alert.addAction(<#T##action: UIAlertAction##UIAlertAction#>)
+        
         /*let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! ExitScreenViewController
@@ -129,4 +154,5 @@ class QuizQuestionViewController: UIViewController {
         //vc.yourScoreLabel.text = "Your Score: "
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

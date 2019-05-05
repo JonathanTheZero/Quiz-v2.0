@@ -14,16 +14,16 @@ class Question {
     private var answers = [String]()
     private var correct: Int
     
-    init?(quest: String, answer1: String, answer2: String, answer3: String, answer4: String, corr: Int){
+    init?(quest: String, answer1: String, answer2: String, answer3: String, corr: Int){
         
         //validate input
-        if(quest.isEmpty || answer1.isEmpty || answer2.isEmpty || answer3.isEmpty || answer4.isEmpty || corr < 1 || corr > 4){
+        if(quest.isEmpty || answer1.isEmpty || answer2.isEmpty || answer3.isEmpty ||  corr < 1 || corr > 4){
             fatalError("The Question Input is not validate")
             return nil
         }
         
         self.question = quest
-        self.answers += [answer1, answer2, answer3, answer4]
+        self.answers += [answer1, answer2, answer3]
         self.correct = corr
     }
     

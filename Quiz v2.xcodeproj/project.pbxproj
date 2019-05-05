@@ -23,6 +23,7 @@
 		64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2482224550AA005DBEF6 /* Highscore.swift */; };
 		869EC5DA2279F76400B01145 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 869EC5D82279F76400B01145 /* ProgressHUD.bundle */; };
 		869EC5DB2279F76400B01145 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 869EC5D92279F76400B01145 /* ProgressHUD.m */; };
+		869EC5DF227C8CF300B01145 /* HighscoreTablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EC5DE227C8CF300B01145 /* HighscoreTablViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		869EC5D72279F76400B01145 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.h"; sourceTree = "<group>"; };
 		869EC5D82279F76400B01145 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.bundle"; sourceTree = "<group>"; };
 		869EC5D92279F76400B01145 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.m"; sourceTree = "<group>"; };
+		869EC5DE227C8CF300B01145 /* HighscoreTablViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTablViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		640B375022415443002305B8 /* Quiz v2 */ = {
 			isa = PBXGroup;
 			children = (
+				869EC5DE227C8CF300B01145 /* HighscoreTablViewController.swift */,
 				640B375122415443002305B8 /* AppDelegate.swift */,
 				640B375322415443002305B8 /* QuizViewController.swift */,
 				641480B52247ED8D003430AB /* QuizQuestionViewController.swift */,
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869EC5DF227C8CF300B01145 /* HighscoreTablViewController.swift in Sources */,
 				640B375422415443002305B8 /* QuizViewController.swift in Sources */,
 				64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */,
 				640B375222415443002305B8 /* AppDelegate.swift in Sources */,

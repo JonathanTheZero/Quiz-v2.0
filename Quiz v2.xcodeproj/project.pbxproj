@@ -21,6 +21,7 @@
 		64E2DDD3224D58CA0083BD17 /* ExitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2DDD2224D58CA0083BD17 /* ExitScreenViewController.swift */; };
 		64EB24812245438C005DBEF6 /* QuizHighscoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */; };
 		64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2482224550AA005DBEF6 /* Highscore.swift */; };
+		8609FDB1227F5424002DF92A /* HighscoreNoPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8609FDB0227F5424002DF92A /* HighscoreNoPhoto.swift */; };
 		869EC5DA2279F76400B01145 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 869EC5D82279F76400B01145 /* ProgressHUD.bundle */; };
 		869EC5DB2279F76400B01145 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 869EC5D92279F76400B01145 /* ProgressHUD.m */; };
 		869EC5DF227C8CF300B01145 /* HighscoreTablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869EC5DE227C8CF300B01145 /* HighscoreTablViewController.swift */; };
@@ -55,6 +56,7 @@
 		64E2DDD2224D58CA0083BD17 /* ExitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitScreenViewController.swift; sourceTree = "<group>"; };
 		64EB24802245438C005DBEF6 /* QuizHighscoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHighscoresTableViewController.swift; sourceTree = "<group>"; };
 		64EB2482224550AA005DBEF6 /* Highscore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		8609FDB0227F5424002DF92A /* HighscoreNoPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreNoPhoto.swift; sourceTree = "<group>"; };
 		869EC5D62279F76300B01145 /* Quiz v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiz v2-Bridging-Header.h"; sourceTree = "<group>"; };
 		869EC5D72279F76400B01145 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.h"; sourceTree = "<group>"; };
 		869EC5D82279F76400B01145 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = "../../../Desktop/ProgressHUD-master/ProgressHUD/ProgressHUD/ProgressHUD.bundle"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				640B375322415443002305B8 /* QuizViewController.swift */,
 				641480B52247ED8D003430AB /* QuizQuestionViewController.swift */,
 				64EB2482224550AA005DBEF6 /* Highscore.swift */,
+				8609FDB0227F5424002DF92A /* HighscoreNoPhoto.swift */,
 				64E2DDD2224D58CA0083BD17 /* ExitScreenViewController.swift */,
 				64CA16C8224AC34800D73DF3 /* QuizProfile.swift */,
 				640B375522415443002305B8 /* Main.storyboard */,
@@ -249,6 +252,7 @@
 				869EC5DB2279F76400B01145 /* ProgressHUD.m in Sources */,
 				64E2DDD3224D58CA0083BD17 /* ExitScreenViewController.swift in Sources */,
 				64EB2483224550AA005DBEF6 /* Highscore.swift in Sources */,
+				8609FDB1227F5424002DF92A /* HighscoreNoPhoto.swift in Sources */,
 				64CA16C9224AC34800D73DF3 /* QuizProfile.swift in Sources */,
 				641480B62247ED8D003430AB /* QuizQuestionViewController.swift in Sources */,
 			);

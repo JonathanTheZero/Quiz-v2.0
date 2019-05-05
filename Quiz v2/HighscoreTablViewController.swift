@@ -8,21 +8,22 @@
 
 import UIKit
 
-class HighscoreTableViewController: UIViewController {
+class HighscoreViewControllerKatinka: UIViewController {
 
     override func viewDidLoad() {
+        scoreLabel1.text = "Score " + String(score)
+        nameLabel1.text = name
         super.viewDidLoad()
         
-        scoreLabel.text = "Score " + String(score)
-        nameLabel.text = name
-        // Do any additional setup after loading the view.
+       
+       // Do any additional setup after loading the view.
     }
     
-
     // MARK: - Outlet
+    @IBOutlet weak var scoreLabel1: UILabel!
+    @IBOutlet weak var nameLabel1: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    
     
     var score = 0
     var name = "---"
@@ -38,8 +39,8 @@ class HighscoreTableViewController: UIViewController {
     func addScore(newName: String, newScore: Int){
         if (newScore > score){
            score = newScore
-           scoreLabel.text = "Score " + String(newScore)
-           nameLabel.text = newName
+           scoreLabel1.text = "Score " + String(newScore)
+           nameLabel1.text = newName
            name = newName
         }
     }

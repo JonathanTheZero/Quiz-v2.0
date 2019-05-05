@@ -17,7 +17,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var newGame: UIButton!
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var highscores: UIButton!
-
+    @IBOutlet weak var centerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

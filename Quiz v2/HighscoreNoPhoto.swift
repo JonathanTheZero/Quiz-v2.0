@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 
-class HighscoreNoPhoto: NSObject, NSCoding {
+class HighscoreNoPhoto{
     
     //MARK: Properties
     
@@ -31,38 +31,24 @@ class HighscoreNoPhoto: NSObject, NSCoding {
     }
     
     
-    struct PropertyKey {
+   /* struct PropertyKey {
         static let name = "name"
         static let score = "score"
+    }*/
+    func getName() -> String{
+        return name
     }
     
-    
-    
-    //MARK: NSCoding
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(score, forKey: PropertyKey.score)
+    func getScore() -> Int{
+        return score
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
-        // The name is required. If we cannot decode a name string, the initializer should fail.
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
-            os_log("Unable to decode the name for a Highscore object.", log: OSLog.default, type: .debug)
-            return nil
-        }
-        
-        // Because photo is an optional property of Highscore, just use conditional cast.
-      
-        let score = aDecoder.decodeInteger(forKey: PropertyKey.score)
-        
-        // Must call designated initializer.
-        self.init(name: name, score: score)
+    func setName(pName: String){
+        self.name=pName
     }
     
-    //MARK: Archiving Paths
+    func setScore(pScore: Int){
+        self.score=pScore
+    }
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("highscores")
 }
-

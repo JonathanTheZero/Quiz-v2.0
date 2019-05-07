@@ -50,9 +50,12 @@ class QuizQuestionViewController: UIViewController {
     */
     func quitQuiz(){
         /*let next:QuizViewController = storyboard?.instantiateViewController(withIdentifier:"QuizViewController") as! QuizViewController
-        self.navigationController?.pushViewController(next, animated: true)*/
-        let viewController = QuizViewController(nibName: "QuizViewController", bundle: nil)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.pushViewController(next, animated: true)
+        let viewController = ExitScreenViewController(nibName: "ExitScreenViewController", bundle: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)*/
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController") as! ExitScreenViewController
+        self.present(newViewController, animated: true, completion: nil)
     }
 
     func setText(question: Question){
@@ -117,12 +120,14 @@ class QuizQuestionViewController: UIViewController {
         if score >= questions.count {
             //TBA: Finish screen
             scoreLabel.text = "Score: " + String(score)
+            
             let alert = UIAlertController(title: "Glückwunsch!", message: "Du hast alle Fragen richtig beantwortet", preferredStyle: .alert)
             let finishAction = UIAlertAction(title: "OK", style: .default)
             { (alertAction) in
                 self.quitQuiz()}
             alert.addAction(finishAction)
             self.present(alert, animated: true, completion: nil)
+            quitQuiz()
         }
         else {
             setText(question: questions[score])
@@ -132,15 +137,14 @@ class QuizQuestionViewController: UIViewController {
     
     private func wrong(){
         ProgressHUD.showError("Falsch")
-        
-        let alert = UIAlertController(title: "Schade, probiers doch gleich noch einmal", message: "Was ist dein Name?", preferredStyle: .alert)
+        quitQuiz()
+        let alert = UIAlertController(title: "Schade", message: "Probiers doch gleich noch einmal", preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Bitte gib hier deinen Namen ein"
         })
-        let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in
-            self.quitQuiz()
-        }
+        let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in self.quitQuiz()
+            }
         
         alert.addAction(finishAction)
         self.present(alert, animated: true, completion: nil)

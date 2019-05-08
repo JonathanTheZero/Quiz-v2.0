@@ -451,19 +451,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UME-iH-QeH">
-                                <rect key="frame" x="164" y="447" width="46" height="75"/>
+                                <rect key="frame" x="213" y="528" width="46" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="test"/>
                                 <connections>
                                     <action selector="testAction:" destination="nio-Vb-QyM" eventType="touchUpInside" id="0xT-Oa-IiY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fH-xN-aer">
-                                <rect key="frame" x="92" y="550" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="reset"/>
-                                <connections>
-                                    <action selector="resetAction:" destination="nio-Vb-QyM" eventType="touchUpInside" id="gJv-JE-n1o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -500,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmN-04-MbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2176.8000000000002" y="161.46926536731635"/>
+            <point key="canvasLocation" x="2177" y="140"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="IWy-5t-edr">
@@ -514,55 +506,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="azZ-mR-NpS">
-                                <rect key="frame" x="135" y="72" width="105" height="230"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTe-Ho-hBs">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="BeO-qB-2R7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tab-mJ-OQt">
-                                        <rect key="frame" x="0.0" y="50" width="105" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="y2N-KT-m1L"/>
-                                        </constraints>
-                                        <state key="normal" title="Neues Profil"/>
-                                        <connections>
-                                            <action selector="clickOnNewProfile:" destination="R1g-IQ-6sG" eventType="touchUpInside" id="DuG-SH-Lno"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-XP-H7i">
-                                        <rect key="frame" x="0.0" y="150" width="105" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="7h9-ft-LG4"/>
-                                        </constraints>
-                                        <state key="normal" title="Profil wechseln"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzS-3O-Sf3">
+                                <rect key="frame" x="133.5" y="162.5" width="108" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWg-ES-aCL">
+                                <rect key="frame" x="120" y="210.5" width="135" height="46"/>
+                                <color key="backgroundColor" red="0.37967696540000001" green="0.62917100810000004" blue="0.59369808810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="H3k-nF-PUS"/>
+                                    <constraint firstAttribute="width" constant="135" id="tIy-fG-4Ls"/>
+                                </constraints>
+                                <state key="normal" title="Reset Highscores">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAction:" destination="R1g-IQ-6sG" eventType="touchUpInside" id="kyQ-eJ-6n4"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.77647058820000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="azZ-mR-NpS" firstAttribute="leading" secondItem="0qY-eo-xgU" secondAttribute="leading" constant="135" id="ED7-vr-NZV"/>
-                            <constraint firstItem="azZ-mR-NpS" firstAttribute="centerX" secondItem="0qY-eo-xgU" secondAttribute="centerX" id="TBk-BT-BzL"/>
-                            <constraint firstItem="azZ-mR-NpS" firstAttribute="top" secondItem="3Kn-Lq-MH1" secondAttribute="bottom" constant="8" symbolic="YES" id="uiX-7K-VIM"/>
+                            <constraint firstItem="IWg-ES-aCL" firstAttribute="centerY" secondItem="0qY-eo-xgU" secondAttribute="centerY" constant="-100" id="Yng-dk-wen"/>
+                            <constraint firstItem="IWg-ES-aCL" firstAttribute="centerX" secondItem="0qY-eo-xgU" secondAttribute="centerX" id="mji-r6-guf"/>
+                            <constraint firstItem="rzS-3O-Sf3" firstAttribute="centerX" secondItem="0qY-eo-xgU" secondAttribute="centerX" id="n99-tV-Y5h"/>
+                            <constraint firstItem="IWg-ES-aCL" firstAttribute="top" secondItem="rzS-3O-Sf3" secondAttribute="bottom" constant="27" id="pMK-gv-GtL"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="changeProfile" destination="PaU-XP-H7i" id="fTH-Yv-rzP"/>
-                        <outlet property="createNewProfile" destination="tab-mJ-OQt" id="ART-IO-MuO"/>
-                        <outlet property="profileLabel" destination="oTe-Ho-hBs" id="QSa-3a-Ekb"/>
-                        <outlet property="profileStack" destination="azZ-mR-NpS" id="Xag-Cy-ObN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7a-51-CFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2401" y="909"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="803.74812593703155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jcW-kj-J22">

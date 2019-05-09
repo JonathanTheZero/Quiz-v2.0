@@ -32,8 +32,6 @@ class QuizQuestionViewController: UIViewController {
         scoreLabel.text = "Score: 0"
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
     }
     
     
@@ -127,7 +125,7 @@ class QuizQuestionViewController: UIViewController {
                 self.quitQuiz()}
             alert.addAction(finishAction)
             self.present(alert, animated: true, completion: nil)
-            quitQuiz()
+            //quitQuiz()
         }
         else {
             setText(question: questions[score])
@@ -137,13 +135,14 @@ class QuizQuestionViewController: UIViewController {
     
     private func wrong(){
         ProgressHUD.showError("Falsch")
-        quitQuiz()
+        //quitQuiz()
         let alert = UIAlertController(title: "Schade", message: "Probiers doch gleich noch einmal", preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Bitte gib hier deinen Namen ein"
         })
-        let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in self.quitQuiz()
+        let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in
+            //self.quitQuiz()
             }
         
         alert.addAction(finishAction)
@@ -158,4 +157,51 @@ class QuizQuestionViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true) */
     }
     
+    func addScore(newName: String, newScore: Int){
+        
+        var highscores =  [HighscoreNoPhoto]()
+        let first = HighscoreNoPhoto(name: "---", score: 0)!
+        let second = HighscoreNoPhoto(name: "---", score: 0)!
+        let third = HighscoreNoPhoto(name: "---", score: 0)!
+        let fourth = HighscoreNoPhoto(name: "---", score: 0)!
+        let fifth = HighscoreNoPhoto(name: "---", score: 0)!
+        let sixth = HighscoreNoPhoto(name: "---", score: 0)!
+        highscores = [first ,second , third, fourth, fifth, sixth]
+        
+        let defaults = UserDefaults.standard
+        let scores = defaults.array(forKey: "SavedScoreArray")  as? [Int] ?? [Int]()
+        let names = defaults.stringArray(forKey: "SavedStringArray") ?? [String]()
+        if (!scores.isEmpty && !names.isEmpty){
+            var x=0
+            while(x<6){
+                highscores[x].setScore(pScore: scores[x])
+                highscores[x].setName(pName: names[x])
+                x=x+1
+            }
+        }
+        var y = 0;
+        while (y < 6){
+            if (newScore <= highscores[y].getScore()){
+                y = y+1
+            }
+            else{
+                let oldName = highscores[y].getName()
+                let oldScore = highscores[y].getScore()
+                highscores[y].setScore(pScore: newScore)
+                highscores[y].setName(pName: newName)
+                
+                let scores = [highscores[0].getScore(), highscores[1].getScore(), highscores[2].getScore(), highscores[3].getScore(), highscores[4].getScore(), highscores[5].getScore()]
+                
+                let names = [highscores[0].getName(),highscores[1].getName(), highscores[2].getName(),highscores[3].getName(),highscores[4].getName(), highscores[5].getName()]
+                
+                let defaults = UserDefaults.standard
+                defaults.set(scores, forKey: "SavedScoreArray")
+                defaults.set(names, forKey: "SavedStringArray")
+            
+                addScore(newName: oldName, newScore: oldScore)
+                y = 6
+            }
+        }
+    }
+        
 }

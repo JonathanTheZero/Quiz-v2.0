@@ -448,10 +448,11 @@
                                     <constraint firstAttribute="bottom" secondItem="t8d-kY-LF3" secondAttribute="bottom" id="z8l-tm-IaP"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UME-iH-QeH">
-                                <rect key="frame" x="258" y="584" width="46" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="test"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UME-iH-QeH">
+                                <rect key="frame" x="16" y="584" width="343" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="2A7-uw-ORC"/>
+                                </constraints>
                                 <connections>
                                     <action selector="testAction:" destination="nio-Vb-QyM" eventType="touchUpInside" id="0xT-Oa-IiY"/>
                                 </connections>
@@ -610,6 +611,7 @@
                         <color key="backgroundColor" red="0.49803921568627452" green="0.77647058823529413" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fuI-7Z-aka" firstAttribute="trailing" secondItem="Mdb-Rj-HSu" secondAttribute="trailingMargin" id="5eK-DE-ywC"/>
+                            <constraint firstItem="UME-iH-QeH" firstAttribute="centerX" secondItem="Mdb-Rj-HSu" secondAttribute="centerX" id="9dt-7k-G9C"/>
                             <constraint firstItem="mKM-MD-Uib" firstAttribute="trailing" secondItem="Mdb-Rj-HSu" secondAttribute="trailingMargin" id="BaD-ta-XbD"/>
                             <constraint firstItem="IPD-hT-9I6" firstAttribute="top" secondItem="mKM-MD-Uib" secondAttribute="bottom" id="Dqb-eS-tUn"/>
                             <constraint firstItem="mKM-MD-Uib" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leadingMargin" id="Fn3-Sz-iH2"/>
@@ -620,7 +622,9 @@
                             <constraint firstItem="mKM-MD-Uib" firstAttribute="top" secondItem="Na9-7j-CcA" secondAttribute="bottom" constant="7.5" id="J7b-AM-CgH"/>
                             <constraint firstItem="Amx-lg-dvo" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leadingMargin" id="LMk-r4-GlB"/>
                             <constraint firstItem="Na9-7j-CcA" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leading" id="RE2-y7-gQa"/>
+                            <constraint firstItem="UME-iH-QeH" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leadingMargin" id="RhA-dt-des"/>
                             <constraint firstItem="Na9-7j-CcA" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leadingMargin" id="Ugi-ja-y5o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UME-iH-QeH" secondAttribute="trailing" id="a5O-aA-aE3"/>
                             <constraint firstItem="mKM-MD-Uib" firstAttribute="leading" secondItem="Mdb-Rj-HSu" secondAttribute="leadingMargin" id="bUL-cj-p1i"/>
                             <constraint firstItem="fuI-7Z-aka" firstAttribute="top" secondItem="knl-Bj-76W" secondAttribute="bottom" id="ddb-Zq-190"/>
                             <constraint firstItem="knl-Bj-76W" firstAttribute="trailing" secondItem="Mdb-Rj-HSu" secondAttribute="trailingMargin" id="e6E-Mw-e0i"/>

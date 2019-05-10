@@ -120,12 +120,14 @@ class QuizQuestionViewController: UIViewController {
             scoreLabel.text = "Score: " + String(score)
             
             let alert = UIAlertController(title: "Glückwunsch!", message: "Du hast alle Fragen richtig beantwortet", preferredStyle: .alert)
-            let finishAction = UIAlertAction(title: "OK", style: .default)
-            { (alertAction) in
-                self.quitQuiz()}
-            alert.addAction(finishAction)
-            self.present(alert, animated: true, completion: nil)
+            let finishAction = UIAlertAction(title: "Weiter", style: .default, handler : nil)
             //quitQuiz()
+            alert.addAction(finishAction)
+            alert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "Bitte gib hier deinen Namen ein"
+            })
+            self.present(alert, animated: true, completion: nil)
+            
         }
         else {
             setText(question: questions[score])

@@ -34,6 +34,9 @@ class QuizQuestionViewController: UIViewController {
 
     }
     
+    @IBAction func TestAddAction(_ sender: Any) {
+        addScore(newName: "yay", newScore: score)
+    }
     
 
     /*
@@ -106,7 +109,7 @@ class QuizQuestionViewController: UIViewController {
         let q5 = Question(quest: "Wieviel virtuelles Wasser steckt in einer Tasse Kaffe?", answer1: "1,4l", answer2: "140ml", answer3: "140l", corr: 3)!
         let q6 = Question(quest: "Wieviel virtuelles Wasser steckt in 1Kg Tomaten?", answer1: "3,5l", answer2: "35l", answer3: "350l", corr: 2)!
         let q7 = Question(quest: "Wieviel Wasser werden bei der Herstellung einer Jeans verbraucht und wieviel C02 wird produziert?", answer1: "11000l Wasser und ca. 23kg CO2", answer2: "5l Wasser und 0,5kg CO2", answer3: "35l Wasser und 15kg CO2", corr: 1)!
-        let q8 = Question(quest: "Eine konventionelle alte Glühlampe wandelt nur knapp 5%-10% der Energie in Licht um, der Rest geht als Wärme „verloren“. Wieviel wandelt eine moderne LED-Lampe in Licht um?", answer1: "15%-25%", answer2: "40%-50%", answer3: ": 70%-80%", corr: 2)!
+        let q8 = Question(quest: "Eine konventionelle alte Glühlampe wandelt nur knapp 5%-10% der Energie in Licht um, der Rest geht als Wärme „verloren“. Wieviel wandelt eine moderne LED-Lampe in Licht um?", answer1: "15%-25%", answer2: "40%-50%", answer3: "70%-80%", corr: 2)!
         let q9 = Question(quest: "Mit 1kWh elektrischer Energie, kann man ca. 4h am Computer arbeiten. Wieviel Kohle werden für die Erzeugung von 1kWh Strom benötigt und wievielC=2 entsteht dabei durchschnittlich?", answer1: " 640g Kohle und 1486g CO2", answer2: "160g Kohle und 371,5g CO2", answer3: " 320g Kohle und 743g CO2", corr: 3)!
         let q10 = Question(quest: "Wie lange kann man mit einer modernen Duschbrause duschen, wenn man stattdessen auf ein Vollbad in der Badewanne verzichtet?", answer1: "ca. 15Min-20Min", answer2: "ca. 25Min-30Min", answer3: "ca. 5Min-10Min", corr: 2)!
         questions += [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
@@ -136,15 +139,19 @@ class QuizQuestionViewController: UIViewController {
     }
     
     private func wrong(){
+        var s = ""
         ProgressHUD.showError("Falsch")
         //quitQuiz()
         let alert = UIAlertController(title: "Schade", message: "Probiers doch gleich noch einmal", preferredStyle: .alert)
+        
+        //let textField = UITextField (coder: <#T##NSCoder#>)
         
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Bitte gib hier deinen Namen ein"
         })
         let finishAction = UIAlertAction(title: "Weiter", style: .default) { (alertAction) in
             //self.quitQuiz()
+            self.addScore(newName: s, newScore: self.score)
             }
         
         alert.addAction(finishAction)

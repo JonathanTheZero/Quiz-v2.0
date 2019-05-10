@@ -54,8 +54,8 @@ class HighscoreViewControllerKatinka: UIViewController {
     // MARK: - Actions
     
     @IBAction func testAction(_ sender: Any) {
-        addScore(newName: "test", newScore: 0)
-        addScore(newName: "bjjd", newScore: 1)
+        addScore(newName: "test", newScore: 9)
+        //addScore(newName: "Test", newScore: 1)
     }
     
     // MARK: - Methods
